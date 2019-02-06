@@ -10,7 +10,13 @@ class Registration
   DOB_NAME_FIELD = 'dob'
   GENDER_BUTTON_ID = 'customRadioInline2'
   UNIVERSITY_SELECTION_BOX = 'inputUni'
-
+  ADDRESS_LINE_ONE_FIELD_ID = 'inputAddress'
+  ADDRESS_LINE_TWO_FIELD_ID = 'inputAddress2'
+  CITY_FIELD_ID = 'inputCity'
+  COUNTY_SELECTION_BOX = 'inputCounty'
+  POSTCODE_FIELD_ID = 'inputPostcode'
+  EMAIL_FIELD_ID = 'inputemailaddress'
+  SKILLS_FIELD_ID = 'exampleFormControlTextarea1'
 
   def visit_registration_page
     visit(REGISTRATION_PAGE_URL)
@@ -41,6 +47,44 @@ class Registration
   end
 
   def select_university_field(university)
-    select(univeristy, :from => UNIVERSITY_SELECTION_BOX)
+    select(university, :from => UNIVERSITY_SELECTION_BOX)
   end
+
+  def fill_in_address_one_field(address)
+    fill_in(ADDRESS_LINE_ONE_FIELD_ID, :with => address)
+  end
+
+  def fill_in_address_two_field(address)
+    fill_in(ADDRESS_LINE_TWO_FIELD_ID, :with => address)
+  end
+
+  def fill_in_city_field(city)
+    fill_in(CITY_FIELD_ID, :with => city)
+  end
+
+  def select_county_field(county)
+    select(county, :from => COUNTY_SELECTION_BOX)
+  end
+
+  def fill_in_postcode_field(postcode)
+    fill_in(POSTCODE_FIELD_ID, :with => postcode)
+  end
+
+  def fill_in_email_field(email)
+    fill_in(EMAIL_FIELD_ID, :with => email)
+  end
+  
+  def fill_in_skills_field(skill)
+    fill_in(SKILLS_FIELD_ID, :with => skill)
+  end
+
+  def fill_in_phone_number_field(number)
+    fill_in(PHONE_NUMBER_FIELD_ID, :with => number)
+  end
+
+  def fill_in_linkedin_field(url)
+    fill_in(LINKEDIN_FIELD_ID, :with => url)
+  end
+
+
 end
