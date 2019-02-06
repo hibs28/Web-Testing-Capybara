@@ -13,7 +13,19 @@ describe 'testing correct path for sparta registration' do
       @sparta_demo_site.registration_page.choose_gender
       @sparta_demo_site.registration_page.fill_in_degree_field('Computing')
       @sparta_demo_site.registration_page.select_university_field('University of Roehampton')
-      sleep 10
+      @sparta_demo_site.registration_page.fill_in_address_one_field('21 London Road')
+      @sparta_demo_site.registration_page.fill_in_address_two_field('studio')
+      @sparta_demo_site.registration_page.fill_in_city_field('London')
+      @sparta_demo_site.registration_page.select_county_field('South Yorkshire')
+      @sparta_demo_site.registration_page.fill_in_postcode_field('WC1 5RZ')
+      @sparta_demo_site.registration_page.fill_in_email_field('123@email.co.uk')
+      @sparta_demo_site.registration_page.fill_in_skills_field('Communication, Business, Time Management')
+      @sparta_demo_site.registration_page.fill_in_phone_number_field('020854727873')
+      @sparta_demo_site.registration_page.fill_in_linkedin_field('https://www.linkedin.com/')
+      @sparta_demo_site.registration_page.choose_stream
+      @sparta_demo_site.registration_page.check_agree_terms_box
+      @sparta_demo_site.registration_page.change_experience_slider_value(50)
+      @sparta_demo_site.registration_page.click_submit_button
     end
   end
 end

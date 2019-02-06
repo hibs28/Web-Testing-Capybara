@@ -17,6 +17,9 @@ class Registration
   POSTCODE_FIELD_ID = 'inputPostcode'
   EMAIL_FIELD_ID = 'inputemailaddress'
   SKILLS_FIELD_ID = 'exampleFormControlTextarea1'
+  PHONE_NUMBER_FIELD_ID = 'exampleFormControlInput1'
+  TERMS_CHECK_BOX_ID = 'terms'
+  EXPERIENCE_SLIDER_ID = 'experienceSlider'
 
   def visit_registration_page
     visit(REGISTRATION_PAGE_URL)
@@ -83,8 +86,22 @@ class Registration
   end
 
   def fill_in_linkedin_field(url)
-    fill_in(LINKEDIN_FIELD_ID, :with => url)
+    find(:xpath, '/html/body/div/form/div[17]/div/input').set(url)
+  end
+  
+  def choose_stream
+    find(:xpath, '/html/body/div/form/div[20]/div[2]').click
   end
 
+  def check_agree_terms_box
+    check(TERMS_CHECK_BOX_ID)
+  end
 
+  def change_experience_slider_value(number)
+    fill_in(EXPERIENCE_SLIDER_ID, :with => number)
+  end
+
+  def click_submit_button
+    find(:xpath, '/html/body/div/form/button').click
+  end
 end
