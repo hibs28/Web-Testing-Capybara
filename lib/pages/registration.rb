@@ -9,6 +9,7 @@ class Registration
   LAST_NAME_FIELD_ID = 'lastName'
   DOB_NAME_FIELD = 'dob'
   GENDER_BUTTON_ID = 'customRadioInline2'
+  UNIVERSITY_SELECTION_BOX = 'inputUni'
 
 
   def visit_registration_page
@@ -24,7 +25,7 @@ class Registration
   end
 
   def fill_in_age_field(age)
-     find(:xpath, '/html/body/div/form/div[3]/div/input').set(age)
+    find(:xpath, '/html/body/div/form/div[3]/div/input').set(age)
   end
 
   def fill_in_dob_field(date)
@@ -35,4 +36,11 @@ class Registration
     find(:xpath, '/html/body/div/form/div[6]').click
   end
 
+  def fill_in_degree_field(degree)
+    find(:xpath, '/html/body/div/form/div[7]/div/input').set(degree)
+  end
+
+  def select_university_field(university)
+    select(univeristy, :from => UNIVERSITY_SELECTION_BOX)
+  end
 end

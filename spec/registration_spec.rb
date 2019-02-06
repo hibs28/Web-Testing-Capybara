@@ -11,6 +11,8 @@ describe 'testing correct path for sparta registration' do
       @sparta_demo_site.registration_page.fill_in_age_field(70)
       @sparta_demo_site.registration_page.fill_in_dob_field('01/01/2000')
       @sparta_demo_site.registration_page.choose_gender
+      @sparta_demo_site.registration_page.fill_in_degree_field('Computing')
+      @sparta_demo_site.registration_page.select_university_field('University of Roehampton')
       sleep 10
     end
   end
